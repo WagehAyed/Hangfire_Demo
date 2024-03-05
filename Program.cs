@@ -27,5 +27,15 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.UseHangfireDashboard("/test/job-Dashboard",new DashboardOptions{
+    DashboardTitle="Hangfire Job Demo Application",
+    DarkModeEnabled=false,
+    DisplayStorageConnectionString=false,
+    // Authorization = new []{
+    //     new HangFireCustomBasicAuthenticationFilter{
+    //         User="admin",
+    //         pass="admin123"
+    //     }
+    // }
+});
 app.Run();
